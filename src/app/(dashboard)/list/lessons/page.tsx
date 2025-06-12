@@ -9,7 +9,7 @@ type Lesson = {
   id: number;
   subject: string;
   class: string;
-  teacher: string;
+  mentor: string;
 };
 
 const columns = [
@@ -22,8 +22,8 @@ const columns = [
     accessor: "class",
   },
   {
-    header: "Teacher",
-    accessor: "teacher",
+    header: "Mentor",
+    accessor: "mentor",
     className: "hidden md:table-cell",
   },
   {
@@ -40,7 +40,7 @@ const LessonListPage = () => {
     >
       <td className="flex items-center gap-4 p-4">{item.subject}</td>
       <td>{item.class}</td>
-      <td className="hidden md:table-cell">{item.teacher}</td>
+      <td className="hidden md:table-cell">{item.mentor}</td>
       <td>
         <div className="flex items-center gap-2">
           {role === "admin" && (

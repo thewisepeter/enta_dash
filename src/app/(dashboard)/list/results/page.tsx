@@ -12,7 +12,7 @@ type Result = {
   id: number;
   subject: string;
   class: string;
-  teacher: string;
+  mentor: string;
   student: string;
   type: "exam" | "assignment";
   date: string;
@@ -34,8 +34,8 @@ const columns = [
     className: "hidden md:table-cell",
   },
   {
-    header: "Teacher",
-    accessor: "teacher",
+    header: "mentor",
+    accessor: "mentor",
     className: "hidden md:table-cell",
   },
   {
@@ -63,12 +63,12 @@ const ResultListPage = () => {
       <td className="flex items-center gap-4 p-4">{item.subject}</td>
       <td>{item.student}</td>
       <td className="hidden md:table-cell">{item.score}</td>
-      <td className="hidden md:table-cell">{item.teacher}</td>
+      <td className="hidden md:table-cell">{item.mentor}</td>
       <td className="hidden md:table-cell">{item.class}</td>
       <td className="hidden md:table-cell">{item.date}</td>
       <td>
         <div className="flex items-center gap-2">
-          {role === "admin" || role === "teacher" && (
+          {role === "admin" || role === "mentor" && (
             <>
               <FormModal table="result" type="update" data={item} />
               <FormModal table="result" type="delete" id={item.id} />
@@ -93,7 +93,7 @@ const ResultListPage = () => {
             <button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
               <Image src="/sort.png" alt="" width={14} height={14} />
             </button>
-            {role === "admin" || role === "teacher" && <FormModal table="result" type="create" />}
+            {role === "admin" || role === "mentor" && <FormModal table="result" type="create" />}
           </div>
         </div>
       </div>

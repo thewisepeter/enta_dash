@@ -9,7 +9,7 @@ type Exam = {
   id: number;
   subject: string;
   class: string;
-  teacher: string;
+  mentor: string;
   date: string;
 };
 
@@ -23,8 +23,8 @@ const columns = [
     accessor: "class",
   },
   {
-    header: "Teacher",
-    accessor: "teacher",
+    header: "mentor",
+    accessor: "mentor",
     className: "hidden md:table-cell",
   },
   {
@@ -46,11 +46,11 @@ const ExamListPage = () => {
     >
       <td className="flex items-center gap-4 p-4">{item.subject}</td>
       <td>{item.class}</td>
-      <td className="hidden md:table-cell">{item.teacher}</td>
+      <td className="hidden md:table-cell">{item.mentor}</td>
       <td className="hidden md:table-cell">{item.date}</td>
       <td>
         <div className="flex items-center gap-2">
-          {role === "admin" || role === "teacher" && (
+          {role === "admin" || role === "mentor" && (
             <>
               <FormModal table="exam" type="update" data={item} />
               <FormModal table="exam" type="delete" id={item.id} />
@@ -75,7 +75,7 @@ const ExamListPage = () => {
             <button className="w-8 h-8 flex items-center justify-center rounded-full bg-lamaYellow">
               <Image src="/sort.png" alt="" width={14} height={14} />
             </button>
-            {role === "admin" || role === "teacher" && <FormModal table="exam" type="create" />}
+            {role === "admin" || role === "mentor" && <FormModal table="exam" type="create" />}
           </div>
         </div>
       </div>

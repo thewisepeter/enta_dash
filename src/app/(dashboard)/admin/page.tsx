@@ -13,7 +13,7 @@ const AdminPage = () => {
         {/* USER CARDS */}
         <div className="flex gap-4 justify-between flex-wrap">
           <UserCard type="student" />
-          <UserCard type="teacher" />
+          <UserCard type="mentor" />
           <UserCard type="parent" />
           <UserCard type="staff" />
         </div>

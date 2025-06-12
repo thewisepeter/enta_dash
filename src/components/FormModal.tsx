@@ -6,10 +6,10 @@ import { useState } from "react";
 
 // USE LAZY LOADING
 
-// import TeacherForm from "./forms/TeacherForm";
+// import mentorForm from "./forms/mentorForm";
 // import StudentForm from "./forms/StudentForm";
 
-const TeacherForm = dynamic(() => import("./forms/TeacherForm"), {
+const MentorForm = dynamic(() => import("./forms/MentorForm"), {
   loading: () => <h1>Loading...</h1>,
 });
 const StudentForm = dynamic(() => import("./forms/StudentForm"), {
@@ -19,7 +19,7 @@ const StudentForm = dynamic(() => import("./forms/StudentForm"), {
 const forms: {
   [key: string]: (type: "create" | "update", data?: any) => JSX.Element;
 } = {
-  teacher: (type, data) => <TeacherForm type={type} data={data} />,
+  mentor: (type, data) => <MentorForm type={type} data={data} />,
   student: (type, data) => <StudentForm type={type} data={data} />
 };
 
@@ -30,7 +30,7 @@ const FormModal = ({
   id,
 }: {
   table:
-    | "teacher"
+    | "mentor"
     | "student"
     | "parent"
     | "subject"
