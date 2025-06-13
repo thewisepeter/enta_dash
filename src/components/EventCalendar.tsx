@@ -9,17 +9,17 @@ type ValuePiece = Date | null;
 
 type Value = ValuePiece | [ValuePiece, ValuePiece];
 
-// TEMPORARY
+// TEMPORARY 
 const events = [
   {
     id: 1,
-    title: "Lorem ipsum dolor",
+    title: "Work Seminar",
     time: "12:00 PM - 2:00 PM",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   {
     id: 2,
-    title: "Lorem ipsum dolor",
+    title: "New Introduction Meetings",
     time: "12:00 PM - 2:00 PM",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
